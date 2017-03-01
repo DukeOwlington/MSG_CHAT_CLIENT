@@ -43,18 +43,18 @@ typedef struct Clients {
   char username[20];
 } Clients;
 
-int InitializeClient();
+int InitializeClient(void);
 void TrimNewlineChar(char *text);
-int SetUserName();
-void *CheckServerStatus();
-void *SendClientStatus();
+int SetUserName(void);
+void *CheckServerStatus(void *args);
+void *SendClientStatus(void *args);
 int GetUserList();
 int ConnectServer();
-void *HandleIncomingMsg();
+void *HandleIncomingMsg(void *args);
 bool IsPrivateMsg(int msg_len, char *usrmsg);
 bool IsHelpMsg(char *usrmsg);
 bool IsDisconnectMsg(char *usrmsg);
-void DisplayHelp();
-void *HandleUserInput();
+void DisplayHelp(void);
+void *HandleUserInput(void *args);
 
 #endif
